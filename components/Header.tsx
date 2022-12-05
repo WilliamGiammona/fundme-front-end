@@ -1,7 +1,11 @@
-import React from "react";
+import { ConnectButton } from "web3uikit";
 
 function Header() {
-  return <div>Header</div>;
+    return (
+        <div>
+            <ConnectButton moralisAuth={false} />
+        </div>
+    );
 }
 
 export default Header;

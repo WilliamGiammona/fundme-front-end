@@ -1,22 +1,32 @@
 {
-  "name": "raffle-front-end",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.4",
-    "next": "13.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.3"
-  }
+    "name": "raffle-front-end",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@types/node": "18.11.9",
+        "@types/react": "18.0.25",
+        "@types/react-dom": "18.0.9",
+        "@web3uikit/core": "^0.2.23",
+        "@web3uikit/icons": "^0.2.23",
+        "@web3uikit/web3": "^0.2.2",
+        "eslint": "8.28.0",
+        "eslint-config-next": "13.0.4",
+        "moralis": "^2.8.2",
+        "moralis-v1": "^1.12.0",
+        "next": "13.0.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-moralis": "^1.4.2",
+        "typescript": "4.9.3",
+        "web3uikit": "^1.0.4"
+    },
+    "devDependencies": {
+        "prettier": "^2.8.0"
+    }
 }

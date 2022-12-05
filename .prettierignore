@@ -1,0 +1,9 @@
+{
+    node_modules
+    tsconfig.json
+    .gitignore
+    .eslintrc.json
+    package.json
+    yarn.lock
+    README.md 
+}
