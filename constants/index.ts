@@ -1,14 +1,2 @@
-import contractAddresses from "./contractAddresses.json";
-import contractABIs from "./contractABIs.json";
-
-type ContractAddresses = {
-    [key: string]: string[];
-};
-
-type ContractABIs = {
-    [key: string]: any;
-};
-
-const addresses: ContractAddresses = contractAddresses;
-
-export { addresses };
+export { default as contractAddresses } from "./contractAddresses.json";
+export { default as abi } from "./contractABIs.json";
