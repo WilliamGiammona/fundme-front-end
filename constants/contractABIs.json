@@ -23,20 +23,14 @@
     { "type": "error", "name": "Raffle__AlreadyInRaffle", "inputs": [] },
     { "type": "error", "name": "Raffle__NotEnoughETH", "inputs": [] },
     { "type": "error", "name": "Raffle__NotEnoughParticipants", "inputs": [] },
-    {
-        "type": "error",
-        "name": "Raffle__NotEnoughTimeSinceLastRaffle",
-        "inputs": []
-    },
+    { "type": "error", "name": "Raffle__NotEnoughTimeSinceLastRaffle", "inputs": [] },
     { "type": "error", "name": "Raffle__NotOpen", "inputs": [] },
     { "type": "error", "name": "Raffle__TransferFailed", "inputs": [] },
     {
         "type": "event",
         "anonymous": false,
         "name": "EnteredRaffle",
-        "inputs": [
-            { "type": "address", "name": "participant", "indexed": true }
-        ]
+        "inputs": [{ "type": "address", "name": "participant", "indexed": true }]
     },
     {
         "type": "event",
