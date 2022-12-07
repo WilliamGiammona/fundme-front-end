@@ -175,7 +175,7 @@ function RaffleEntrance() {
                         </div>
                     </div>
                 ) : (
-                    <div>Pleae Connect Your Wallet</div>
+                    <div>Pleae Connect Your Wallet to the Goerli Test Network</div>
                 )}
             </div>
         </main>
