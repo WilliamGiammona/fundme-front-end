@@ -76,7 +76,7 @@ function RaffleEntrance() {
     }, [isWeb3Enabled]);
 
     const handleSuccess = async (tx: ContractTransaction) => {
-        await tx.wait(1);
+        await tx.wait(6);
         handleNewNotification(tx);
         updateUI();
     };
@@ -144,6 +144,9 @@ function RaffleEntrance() {
                                         <div>Enter Raffle</div>
                                     )}
                                 </button>
+                                <div className="text-xs">
+                                    (You may need to refresh after your MetaMask transaction goes through)
+                                </div>
                             </div>
 
                             <div className="py-2">
@@ -159,6 +162,7 @@ function RaffleEntrance() {
                                             },
                                         });
                                     }}
+                                    disabled={isFetching || isLoading}
                                 >
                                     {isFetching || isLoading ? (
                                         <div className="animate-spin spinner-border h-8 w-8 border-b-2 rounded-full"></div>
@@ -171,7 +175,7 @@ function RaffleEntrance() {
                         </div>
                     </div>
                 ) : (
-                    <div>No Raffle Address Detected</div>
+                    <div>Pleae Connect Your Wallet</div>
                 )}
             </div>
         </main>
