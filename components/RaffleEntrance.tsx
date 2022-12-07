@@ -119,7 +119,7 @@ function RaffleEntrance() {
                             </div>
                             <div className="py-2">Number of Participants: {numParticipants}</div>
                             <div className="py-2 font-bold">
-                                Winner: <div className="font-normal">{winner}</div>
+                                Recent Winner: <div className="font-normal">{winner}</div>
                             </div>
                         </div>
                         <div className="pt-5">
