@@ -16,9 +16,10 @@ function RaffleEntrance() {
     const [entranceFee, setEntranceFee] = useState("0");
     const [numParticipants, setNumParticipants] = useState("0");
     const [winner, setWinner] = useState("0x0000000000000000000000000000000000000000");
+    const [isWaiting, setIsWaiting] = useState(false);
 
     const dispatch = useNotification();
-    const { data, error, runContractFunction, isFetching, isLoading } = useWeb3Contract({});
+    const { error, runContractFunction, isFetching, isLoading } = useWeb3Contract({});
 
     const enterRaffleParams = {
         abi: abi,
@@ -76,8 +77,9 @@ function RaffleEntrance() {
     }, [isWeb3Enabled]);
 
     const handleSuccess = async (tx: ContractTransaction) => {
-        await tx.wait(6);
+        await tx.wait();
         handleNewNotification(tx);
+        setIsWaiting(false);
         updateUI();
     };
 
@@ -99,6 +101,8 @@ function RaffleEntrance() {
             icon: <Bell />,
             position: "topR",
         });
+        setIsWaiting(false);
+        updateUI();
     };
 
     return (
@@ -113,6 +117,7 @@ function RaffleEntrance() {
             <div className="p-5">
                 {raffleAddress ? (
                     <div>
+                        {error && <div className="text-red-500">{error.message}</div>}
                         <div className="border-b-2">
                             <div className="py-2">
                                 Ticket Price: {ethers.utils.formatUnits(entranceFee, "ether")} ETH
@@ -127,6 +132,7 @@ function RaffleEntrance() {
                                 <button
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-auto"
                                     onClick={async () => {
+                                        setIsWaiting(true);
                                         await runContractFunction({
                                             params: enterRaffleParams,
                                             onSuccess: (tx) => handleSuccess(tx as ContractTransaction),
@@ -138,14 +144,15 @@ function RaffleEntrance() {
                                     }}
                                     disabled={isFetching || isLoading}
                                 >
-                                    {isFetching || isLoading ? (
+                                    {isFetching || isLoading || isWaiting ? (
                                         <div className="animate-spin spinner-border h-8 w-8 border-b-2 rounded-full"></div>
                                     ) : (
                                         <div>Enter Raffle</div>
                                     )}
                                 </button>
                                 <div className="text-xs">
-                                    (You may need to refresh after your MetaMask transaction goes through)
+                                    (You may need to refresh after your MetaMask transaction goes through, this may take
+                                    several miniutes)
                                 </div>
                             </div>
 
@@ -167,7 +174,7 @@ function RaffleEntrance() {
                                     {isFetching || isLoading ? (
                                         <div className="animate-spin spinner-border h-8 w-8 border-b-2 rounded-full"></div>
                                     ) : (
-                                        <div>Finish Raffle</div>
+                                        <div>Start Raffle</div>
                                     )}
                                 </button>
                                 <div className="text-xs">(Only the contract owner can start this raffle)</div>
@@ -175,7 +182,7 @@ function RaffleEntrance() {
                         </div>
                     </div>
                 ) : (
-                    <div>Pleae Connect Your Wallet to the Goerli Test Network</div>
+                    <div>Pleae Connect Your MetaMask Wallet to the Goerli Test Network</div>
                 )}
             </div>
         </main>
