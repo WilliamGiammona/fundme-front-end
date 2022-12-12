@@ -2,18 +2,18 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
-import Contract from "../components/Contract";
+import FundMe from "../components/FundMe";
 
 export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Raffle</title>
-                <meta name="description" content="Decentrlized Smart Contract Raffle" />
+                <title>FundMe</title>
+                <meta name="description" content="Decentrlized Smart Contract Fund Me" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <Contract />
+            <FundMe />
         </div>
     );
 }
