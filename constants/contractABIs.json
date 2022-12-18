@@ -1,1 +1,92 @@
-[{}]
+[
+    { "type": "constructor", "payable": false, "inputs": [{ "type": "uint256", "name": "minFundAmt" }] },
+    { "type": "error", "name": "FundMe__NotEnoughEth", "inputs": [] },
+    { "type": "error", "name": "FundMe__ProblemWithWithdrawal", "inputs": [] },
+    {
+        "type": "event",
+        "anonymous": false,
+        "name": "OwnershipTransferred",
+        "inputs": [
+            { "type": "address", "name": "previousOwner", "indexed": true },
+            { "type": "address", "name": "newOwner", "indexed": true }
+        ]
+    },
+    {
+        "type": "function",
+        "name": "fund",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "gas": 29000000,
+        "inputs": [],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "getAddressToAmountFunded",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [{ "type": "address", "name": "funder" }],
+        "outputs": [{ "type": "uint256" }]
+    },
+    {
+        "type": "function",
+        "name": "getFunders",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [{ "type": "uint256", "name": "index" }],
+        "outputs": [{ "type": "address" }]
+    },
+    {
+        "type": "function",
+        "name": "getMinFundAmt",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [],
+        "outputs": [{ "type": "uint256" }]
+    },
+    {
+        "type": "function",
+        "name": "owner",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [],
+        "outputs": [{ "type": "address" }]
+    },
+    {
+        "type": "function",
+        "name": "renounceOwnership",
+        "constant": false,
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "transferOwnership",
+        "constant": false,
+        "payable": false,
+        "gas": 29000000,
+        "inputs": [{ "type": "address", "name": "newOwner" }],
+        "outputs": []
+    },
+    {
+        "type": "function",
+        "name": "withdraw",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "gas": 29000000,
+        "inputs": [],
+        "outputs": []
+    }
+]
