@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import FundMe from "../components/FundMe";
+import FunderIndex from "../components/FunderIndex";
 
 export default function Home() {
     return (
@@ -14,6 +15,7 @@ export default function Home() {
             </Head>
             <Header />
             <FundMe />
+            <FunderIndex />
         </div>
     );
 }
