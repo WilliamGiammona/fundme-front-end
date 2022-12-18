@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import FundMe from "../components/FundMe";
 import FunderIndex from "../components/FunderIndex";
+import FunderAddress from "../components/FunderAddress";
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
             <Header />
             <FundMe />
             <FunderIndex />
+            <FunderAddress />
         </div>
     );
 }
