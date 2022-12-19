@@ -6,6 +6,7 @@ import FundMe from "../components/FundMe";
 import FunderIndex from "../components/FunderIndex";
 import FunderAddress from "../components/FunderAddress";
 import EntranceFee from "../components/EntranceFee";
+import Withdraw from "../components/Withdraw";
 
 export default function Home() {
     return (
@@ -21,6 +22,7 @@ export default function Home() {
             <FunderIndex />
             <FunderAddress />
             <EntranceFee />
+            <Withdraw />
         </div>
     );
 }
