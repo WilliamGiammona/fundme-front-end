@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import FundMe from "../components/FundMe";
 import FunderIndex from "../components/FunderIndex";
 import FunderAddress from "../components/FunderAddress";
+import EntranceFee from "../components/EntranceFee";
 
 export default function Home() {
     return (
@@ -16,8 +17,10 @@ export default function Home() {
             </Head>
             <Header />
             <FundMe />
+            <EntranceFee />
             <FunderIndex />
             <FunderAddress />
+            <EntranceFee />
         </div>
     );
 }
